@@ -8,32 +8,38 @@ import Button from '@mui/material/Button'
 
 const Product = ({ image, title, price, category }) => {
   const cardStyle = {
-    // height: '400px',
-    padding: '10px'
+    height: '420px',
+    padding: '10px 10px'
   }
-  const cardImg = {
-    height: '265px'
+  const img = {
+    height: '100%',
+    padding: '20px 40px',
+    width: '100%',
+  }
+  const imgBox = {
+    height: '65%',
+    width: '100%'
   }
   return (
     <Card sx={cardStyle}>
-      <CardActionArea>
-        <CardMedia
-          sx={cardImg}
-          component='img'
-          image={image}
-          alt='product img'
-        />
+      <CardActionArea sx={imgBox}>
+        {/* <CardMedia sx={img} component='img' image={image} alt='product img' /> */}
+        <img src={image} alt='' style={img} />
         <CardContent>
           <Typography
             gutterBottom
             align='center'
             variant='h5'
             component='div'
-            sx={{ fontSize: '18px' }}
-           >
+            sx={{ fontSize: '16px' }}
+          >
             {title}
           </Typography>
-          <Typography align='center' variant='h6' sx={{ fontSize: '16px', fontWeight: '600' }}>
+          <Typography
+            align='center'
+            variant='h6'
+            sx={{ fontSize: '14px', fontWeight: '600' }}
+          >
             {'$'}
             {price}
           </Typography>
